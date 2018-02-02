@@ -78,3 +78,9 @@ function dealerCards2(){
 	};
 };
 
+
+$('#stand').on('click', function(){
+	//Turn the face-downed card of dealer up
+	// Extract the values of all the cards on table
+	// Compare the values' sum and announce
+});
