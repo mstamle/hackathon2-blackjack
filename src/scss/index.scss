@@ -6,7 +6,7 @@ body {
     font-size: 1.2em;
     text-align: center;
     font-weight: bold;
-    text-shadow: #593909 2px 2px 5px;
+    text-shadow: #593909 2px 2px 7px;
 }
 
 div{
@@ -31,3 +31,7 @@ button {
     color: burlywood;
 }
 
+.card {
+    border: #593909 solid 1px;
+    border-radius: 10%;
+}

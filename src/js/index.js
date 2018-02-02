@@ -155,7 +155,7 @@ function battle() {
 	// Compare the values' sum and announce
 	var resultField = $('#result');
 
-	if((pPoints > 21) && (dPoints > 21)){
+	if((pPoints > 21) || (dPoints > 21)){
 		resultField.text('Bust!! ' + 'Dealer has '
 		+ dPoints + ' points and you have '
 		+ pPoints + ' points.' );
