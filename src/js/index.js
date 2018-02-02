@@ -6,6 +6,7 @@ var deck = generateDeck();
 shuffleDeck(deck);
 var dealerHand = [];
 var playerHand = [];
+var discarded = [];
 
 // Arrray of discarded
 
@@ -24,7 +25,6 @@ function startGame() {
 	discarded.push(currentCard);
 	console.log(currentCard);
 	discarded[0].reversed = true;
-
 	$('#discarded-cards').addClass('revers');
 
 }
@@ -34,12 +34,17 @@ function startGame() {
 // Deal first card - down
 // Deal second card - up
 
-$('#deal-btn').on("click", dealerCards);
-function dealerCards() {
+$('#deal-btn').on("click", firstDeal);
+function firstDeal() {
 	dealerCards1();
 	dealerCards2();
 	playerCards1();
 	playerCards2();
+	// createNewCard(dealerHand,'dealer');
+	// createNewCard(dealerHand,'dealer');
+	// $('#dealer-hand1').addClass('revers');
+	// createNewCard(playerHand,'player');
+	// createNewCard(playerHand,'player');
 };
 
 
@@ -69,8 +74,6 @@ function dealerCards2() {
 	var dealerHand2Class = currentCard.suit + '-' + currentCard.value;
 	console.log(dealerHand2Class);
 	$('#dealer-hand2').addClass(dealerHand2Class);
-
-
 };
 
 
@@ -134,14 +137,16 @@ function sumValueinArrays(myArray) {
 	return sum;
 
 };
-$('#stand').on('click', function () {
+$('#stand').on('click', battle);
+
+function battle() {
 	//Turn the face-downed card of dealer up
 	$('#dealer-hand1').removeClass('revers');
 	// Extract the values of all the cards on table
 	var pPoints = sumValueinArrays(playerHand);
 	var dPoints = sumValueinArrays(dealerHand);
-	console.log(pPoints);
-	console.log('dealer ' + dPoints);
+	console.log('player: ' + pPoints);
+	console.log('dealer: ' + dPoints);
 
 	//Announce the points
 	// alert('Dealer has ' + dPoints + ' points and you have ' + pPoints + ' points.');
@@ -151,7 +156,6 @@ $('#stand').on('click', function () {
 	var resultField = $('#result');
 	if (pPoints == dPoints) {
 		if (pPoints > 21) {
-
 			resultField.text('Bust!!');
 		}
 		else if (pPoints < 21) {
@@ -160,18 +164,17 @@ $('#stand').on('click', function () {
 			resultField.text('You both win!');
 		}
 
-	} else if ((pPoints > 21) && (dPoints) > 21) {
+	} else if ((pPoints > 21) && (dPoints > 21)) {
 		resultField.text('Bust!!');
 	} else if ((pPoints < 21) && (dPoints < 21)) {
 		if (pPoints > dPoints) {
 			resultField.text('You win!');
-
 		} else {
 			resultField.text('You lose!');
 		}
 	}
 
-});
+};
 
 
 //-----------------------End of Stand button---------------//
