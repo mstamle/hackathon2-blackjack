@@ -14,8 +14,8 @@ $('#start-btn').on("click",startGame);
 
 function startGame(){
 	shuffleDeck(deck);
-	var i = deck.length - 1;
-	var currentCard = deck[i];
+	var currentCardnumber = deck.length - 1;
+	var currentCard = deck[currentCardnumber];
 	console.log(currentCard);
 
 	//remove 1 card - pop out of deck, add to discarded array
@@ -52,7 +52,8 @@ function dealerCards(){
 
 
 function dealerCards1(){
-	var currentCard = deck[0];
+	var currentCardnumber = deck.length - 1;
+	var currentCard = deck[currentCardnumber];
 	//remove 1 card - pop out of deck, add to discarded array
 	var dealerHand = [];
 	dealerHand.push({
@@ -73,7 +74,9 @@ function dealerCards1(){
 
 
 function dealerCards2(){
-	var currentCard = deck[1];
+	var currentCardnumber = deck.length - 1;
+	var currentCard = deck[currentCardnumber];
+
 	//remove 1 card - pop out of deck, add to discarded array
 	var dealerHand = [];
 	dealerHand.push({

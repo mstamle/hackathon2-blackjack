@@ -1,6 +1,7 @@
 
 function playerCards1(){
-	var currentCard = deck[2];
+	var currentCardnumber = deck.length - 1;
+	var currentCard = deck[currentCardnumber];
 	//remove 1 card - pop out of deck, add to discarded array
 	var playerHand = [];
 	playerHand.push({
@@ -19,7 +20,8 @@ function playerCards1(){
 };
 
 function playerCards2(){
-	var currentCard = deck[3];
+	var currentCardnumber = deck.length - 1;
+	var currentCard = deck[currentCardnumber];
 	//remove 1 card - pop out of deck, add to discarded array
 	var playerHand = [];
 	playerHand.push({
