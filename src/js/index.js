@@ -8,11 +8,10 @@ var dealerHand = [];
 var playerHand = [];
 var discarded = [];
 
-// Arrray of discarded
 
 // Game starts: by a button, shuffle and remove the top card, facing down
 
-// Start
+//-------------------------------- Start--------------------------//
 $('#start-btn').on("click", startGame);
 
 function startGame() {
@@ -29,7 +28,7 @@ function startGame() {
 
 }
 
-
+// First Dealing:
 // Dealing for the dealer
 // Deal first card - down
 // Deal second card - up
@@ -40,6 +39,8 @@ function firstDeal() {
 	dealerCards2();
 	playerCards1();
 	playerCards2();
+
+	// Another approach but it's bugging
 	// createNewCard(dealerHand,'dealer');
 	// createNewCard(dealerHand,'dealer');
 	// $('#dealer-hand1').addClass('revers');
@@ -64,7 +65,6 @@ function dealerCards1() {
 	$('#dealer-hand1').addClass('revers');
 };
 
-
 function dealerCards2() {
 	var currentCard = deck.pop();
 	//remove 1 card - pop out of deck, add to dealer hand
@@ -75,8 +75,6 @@ function dealerCards2() {
 	console.log(dealerHand2Class);
 	$('#dealer-hand2').addClass(dealerHand2Class);
 };
-
-
 
 function playerCards1() {
 	var currentCard = deck.pop();
@@ -137,6 +135,7 @@ function sumValueinArrays(myArray) {
 	return sum;
 
 };
+
 $('#stand').on('click', battle);
 
 function battle() {
@@ -213,20 +212,17 @@ function createNewCard(arrayName,person){
 	var currentCard = deck.pop();
 	// add to the arrayName
 	thisarrayName.push(currentCard);
-// create a div
-$('.' + thisperson + 'HandField').append('<div id="' + thisperson + '-hand' + positionDiv + '" class="card"></div>');
-// display the card to the div
-var newdivClass = currentCard.suit + '-' + currentCard.value;
-$('#player-hand'+ positionDiv).addClass(newdivClass);
-var positionDiv = thisarrayName.length + 1;
+	// create a div
+	$('.' + thisperson + 'HandField').append('<div id="' + thisperson + '-hand' + positionDiv + '" class="card"></div>');
+	// display the card to the div
+	var newdivClass = currentCard.suit + '-' + currentCard.value;
+	$('#player-hand'+ positionDiv).addClass(newdivClass);
+	var positionDiv = thisarrayName.length + 1;
 };
 
 $('#hit').on('click', function(){
 	createNewCard(playerHand,'player')
 });
-// $('#hit').on('click', createNewCard(playerHand,'player'));
-
-
 
 // $('#hit').on('click', function createPlayerNewCard(){
 // 		var positionDiv = playerHand.length + 1;
@@ -241,15 +237,4 @@ $('#hit').on('click', function(){
 // 	$('#player-hand'+ positionDiv).addClass(newdivClass);
 // 	var positionDiv = playerHand.length + 1;
 
-
-	//Player will have to press Stand button again
-
-
-
-	// name, surname,interest,eyeColor,number){
-    // people.push({name: name,surname: surname,interest: interest, eyeColor: eyeColor});
-    // var newButton = document.createElement("button");
-    // newButton.onclick = function(){showPeople(number);};
-    // newButton.innerHTML = name;
-    // var buttContainer = document.getElementById("buttonContainer");
-    // buttContainer.appendChild(newButton);
+//Player will have to press Stand button again
