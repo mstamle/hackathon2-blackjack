@@ -57,6 +57,7 @@ function dealerCards1(){
 	if (dealerHand[0].reversed == false){
 		$('#dealer-hand1').addClass(dealerHand1Class);
 	} else{
+		$('#dealer-hand1').addClass(dealerHand1Class);
 		$('#dealer-hand1').addClass('revers');
 	};
 };
@@ -81,6 +82,7 @@ function dealerCards2(){
 
 $('#stand').on('click', function(){
 	//Turn the face-downed card of dealer up
+	$('#dealer-hand1').removeClass('revers');
 	// Extract the values of all the cards on table
 	// Compare the values' sum and announce
 });
