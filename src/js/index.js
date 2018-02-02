@@ -144,29 +144,30 @@ $('#stand').on('click', function () {
 	console.log('dealer ' + dPoints);
 
 	//Announce the points
-	alert('Dealer has ' + dPoints + ' points and you have ' + pPoints + ' points.');
+	// alert('Dealer has ' + dPoints + ' points and you have ' + pPoints + ' points.');
 
 
 	// Compare the values' sum and announce
+	var resultField = $('#result');
 	if (pPoints == dPoints) {
 		if (pPoints > 21) {
 
-			alert('Bust!!');
+			resultField.text('Bust!!');
 		}
 		else if (pPoints < 21) {
-			alert('Tie!');
+			resultField.text('Tie!');
 		} else {
-			alert('You both win!');
+			resultField.text('You both win!');
 		}
 
 	} else if ((pPoints > 21) && (dPoints) > 21) {
-		alert('Bust!!');
+		resultField.text('Bust!!');
 	} else if ((pPoints < 21) && (dPoints < 21)) {
 		if (pPoints > dPoints) {
-			alert('You win!');
+			resultField.text('You win!');
 
 		} else {
-			alert('You lose!');
+			resultField.text('You lose!');
 		}
 	}
 

@@ -2,14 +2,22 @@
 
 body {
     color: white;
+    background-color: #3a841d;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 div{
-    background-color: #3a841d;
-    margin: 2em;
+    margin: .5em;
     display: flex;
 }
 
 div div {
     justify-content: space-between;
+    color: rgba(0,0,0,0);
 }
+
+.discardedField {
+    float: right;
+}
+
