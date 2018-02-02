@@ -3,6 +3,7 @@
 // Preparation:
 
 var deck = generateDeck();
+shuffleDeck(deck);
 
 // Arrray of discarded
 
@@ -14,18 +15,17 @@ $('#start-btn').on("click",startGame);
 function startGame(){
 	shuffleDeck(deck);
 	var currentCard = deck[0];
-
 	//remove 1 card - pop out of deck, add to discarded array
 	var discarded = [];
 	discarded.push({
-			'suit': deck[0].suit,
-			'value': deck[0].value,
-			'reversed': deck[0].reversed
+			'suit': currentCard.suit,
+			'value': currentCard.value,
+			'reversed': currentCard.reversed
 		});
 	// Push to discarded array
-	console.log(discarded[0]);
+	console.log(currentCard);
 	discarded[0].reversed = true;
-	console.log(discarded[0]);
+
 	// var classDiscarded = discarded[0].suit +'-' + discarded[0].value;
 
 	$('#discarded-cards').addClass('revers');
@@ -36,7 +36,27 @@ function startGame(){
 // Dealing for the dealer
 // Deal first card - down
 // Deal second card - up
+
+$('#deal-btn').on("click",dealerCards);
 function dealerCards(){
+	var currentCard = deck[0];
+	//remove 1 card - pop out of deck, add to discarded array
+	var dealerHand = [];
+	dealerHand.push({
+			'suit': currentCard.suit,
+			'value': currentCard.value,
+			'reversed': true
+		});
+	// Show on dealer's Hand
+	console.log(currentCard);
+	var dealerHand1Class = currentCard.suit + '-' + currentCard.value;
+	console.log(dealerHand1Class);
+	if (dealerHand[0].reversed = false){
+		$('#dealer-hand1').addClass(dealerHand1Class);
+	} else{
+		$('#dealer-hand1').addClass('revers');
+	}
+
 
 };
 
