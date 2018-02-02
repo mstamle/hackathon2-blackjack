@@ -178,22 +178,45 @@ $('#stand').on('click', function () {
 
 //-----------------------Hit button-------------------------//
 
-
-$('#hit').on('click', function createPlayerNewCard(){
-
-		var positionDiv = playerHand.length + 1;
-		// pop a card
-		var currentCard = deck.pop();
-		// add to the playerHand
-		playerHand.push(currentCard);
+// Use this function to deal and to hit. Parameters are: array's name,
+// person
 
 
-	// create a div
-	$('.playerHandField').append('<div id="player-hand' + positionDiv + '" class="card"></div>');
-	// display the card to the div
-	var newdivClass = currentCard.suit + '-' + currentCard.value;
-	$('#player-hand'+ positionDiv).addClass(newdivClass);
-	var positionDiv = playerHand.length + 1;
+function createNewCard(arrayName,person){
+	var thisarrayName = arrayName;
+	var thisperson = person;
+	var positionDiv = thisarrayName.length + 1;
+	// pop a card
+	var currentCard = deck.pop();
+	// add to the arrayName
+	thisarrayName.push(currentCard);
+// create a div
+$('.' + thisperson + 'HandField').append('<div id="' + thisperson + '-hand' + positionDiv + '" class="card"></div>');
+// display the card to the div
+var newdivClass = currentCard.suit + '-' + currentCard.value;
+$('#player-hand'+ positionDiv).addClass(newdivClass);
+var positionDiv = thisarrayName.length + 1;
+};
+
+$('#hit').on('click', function(){
+	createNewCard(playerHand,'player')
+});
+// $('#hit').on('click', createNewCard(playerHand,'player'));
+
+
+
+// $('#hit').on('click', function createPlayerNewCard(){
+// 		var positionDiv = playerHand.length + 1;
+// 		// pop a card
+// 		var currentCard = deck.pop();
+// 		// add to the playerHand
+// 		playerHand.push(currentCard);
+// 	// create a div
+// 	$('.playerHandField').append('<div id="player-hand' + positionDiv + '" class="card"></div>');
+// 	// display the card to the div
+// 	var newdivClass = currentCard.suit + '-' + currentCard.value;
+// 	$('#player-hand'+ positionDiv).addClass(newdivClass);
+// 	var positionDiv = playerHand.length + 1;
 
 
 	//Player will have to press Stand button again
@@ -207,4 +230,3 @@ $('#hit').on('click', function createPlayerNewCard(){
     // newButton.innerHTML = name;
     // var buttContainer = document.getElementById("buttonContainer");
     // buttContainer.appendChild(newButton);
-});
