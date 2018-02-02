@@ -1,6 +1,6 @@
 
 function playerCards1(){
-	var currentCard = deck[0];
+	var currentCard = deck[2];
 	//remove 1 card - pop out of deck, add to discarded array
 	var playerHand = [];
 	playerHand.push({
@@ -19,7 +19,7 @@ function playerCards1(){
 };
 
 function playerCards2(){
-	var currentCard = deck[0];
+	var currentCard = deck[3];
 	//remove 1 card - pop out of deck, add to discarded array
 	var playerHand = [];
 	playerHand.push({
@@ -32,8 +32,8 @@ function playerCards2(){
 	// Show on player's Hand
 	console.log(currentCard);
 	var playerHand2Class = currentCard.suit + '-' + currentCard.value;
-	console.log(playerHand1Class);
-    $('#player-hand2').addClass(playerHand1Class);
+	console.log(playerHand2Class);
+    $('#player-hand2').addClass(playerHand2Class);
 
 };
 

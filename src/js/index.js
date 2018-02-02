@@ -41,6 +41,8 @@ $('#deal-btn').on("click",dealerCards);
 function dealerCards(){
 	dealerCards1();
 	dealerCards2();
+	playerCards1();
+	playerCards2();
 	};
 
 
@@ -68,7 +70,7 @@ function dealerCards1(){
 
 
 function dealerCards2(){
-	var currentCard = deck[0];
+	var currentCard = deck[1];
 	//remove 1 card - pop out of deck, add to discarded array
 	var dealerHand = [];
 	dealerHand.push({

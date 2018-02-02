@@ -4,7 +4,12 @@ body {
     color: white;
 }
 
-div {
+div{
     background-color: #3a841d;
     margin: 2em;
+    display: flex;
+}
+
+div div {
+    justify-content: space-between;
 }
