@@ -2,6 +2,8 @@
 
 // Preparation:
 
+var deck = generateDeck();
+
 // Arrray of discarded
 
 // Game starts: by a button, shuffle and remove the top card, facing down
@@ -10,7 +12,6 @@
 $('#start-btn').on("click",startGame);
 
 function startGame(){
-	var deck = generateDeck();
 	shuffleDeck(deck);
 	var currentCard = deck[0];
 
@@ -21,6 +22,7 @@ function startGame(){
 			'value': deck[0].value,
 			'reversed': deck[0].reversed
 		});
+	// Push to discarded array
 	console.log(discarded[0]);
 	discarded[0].reversed = true;
 	console.log(discarded[0]);
@@ -28,10 +30,13 @@ function startGame(){
 
 	$('#discarded-cards').addClass('revers');
 
-	// Push to discarded array
-
 }
 
 
-//
+// Dealing for the dealer
+// Deal first card - down
+// Deal second card - up
+function dealerCards(){
+
+};
 
