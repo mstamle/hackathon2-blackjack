@@ -14,18 +14,12 @@ $('#start-btn').on("click",startGame);
 
 function startGame(){
 	shuffleDeck(deck);
-	var currentCardnumber = deck.length - 1;
-	var currentCard = deck[currentCardnumber];
+	var currentCard = deck.pop();
 	console.log(currentCard);
-
 	//remove 1 card - pop out of deck, add to discarded array
 	var discarded = [];
-	discarded.push({
-			'suit': currentCard.suit,
-			'value': currentCard.value,
-			'reversed': currentCard.reversed
-		});
 	// Push to discarded array
+	discarded.push(currentCard);
 	console.log(currentCard);
 	discarded[0].reversed = true;
 
