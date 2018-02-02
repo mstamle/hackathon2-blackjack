@@ -11,13 +11,13 @@ body {
 }
 
 div{
-    margin: .5em;
+    margin: .4em;
     display: flex;
 }
 
 div div {
     justify-content: space-between;
-    color: rgba(0,0,0,0);
+
 }
 
 .discardedField {
@@ -31,6 +31,8 @@ button {
     font-size: 1.2em;
     color: burlywood;
     font-family: 'Cormorant Garamond', serif;
+    margin-left: .2em;
+    margin-right: .2em;
 }
 
 .card {
