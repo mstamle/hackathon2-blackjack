@@ -110,7 +110,26 @@ function sumValueinArrays(myArray){
 	var i;
 	var x = myArray.length;
 	for (i=0 ; i < x;i++){
-		sum = sum + parseInt(myArray[i].value);
+
+		//read the value
+		var readValue = myArray[i].value;
+
+		//compare to give it a number value:
+
+		if (   (readValue == 'jack')
+			|| (readValue == 'queen')
+			|| (readValue == 'king')
+		   )
+		{
+			readValue = 10;
+		} else if (readValue == 'ace')
+		{
+			readValue = 1;
+		} else {
+			readValue == parseInt(readValue);
+		}
+
+		sum = parseInt(sum) + parseInt(readValue);
 		sum = parseInt(sum);
 
 	}
