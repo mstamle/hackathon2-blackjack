@@ -172,3 +172,39 @@ $('#stand').on('click', function () {
 	}
 
 });
+
+
+//-----------------------End of Stand button---------------//
+
+//-----------------------Hit button-------------------------//
+
+
+$('#hit').on('click', function createPlayerNewCard(){
+
+		var positionDiv = playerHand.length + 1;
+		// pop a card
+		var currentCard = deck.pop();
+		// add to the playerHand
+		playerHand.push(currentCard);
+
+
+	// create a div
+	$('.playerHandField').append('<div id="player-hand' + positionDiv + '" class="card"></div>');
+	// display the card to the div
+	var newdivClass = currentCard.suit + '-' + currentCard.value;
+	$('#player-hand'+ positionDiv).addClass(newdivClass);
+	var positionDiv = playerHand.length + 1;
+
+
+	//Player will have to press Stand button again
+
+
+
+	// name, surname,interest,eyeColor,number){
+    // people.push({name: name,surname: surname,interest: interest, eyeColor: eyeColor});
+    // var newButton = document.createElement("button");
+    // newButton.onclick = function(){showPeople(number);};
+    // newButton.innerHTML = name;
+    // var buttContainer = document.getElementById("buttonContainer");
+    // buttContainer.appendChild(newButton);
+});
