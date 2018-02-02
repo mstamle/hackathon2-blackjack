@@ -23,8 +23,6 @@ function startGame(){
 	console.log(currentCard);
 	discarded[0].reversed = true;
 
-	// var classDiscarded = discarded[0].suit +'-' + discarded[0].value;
-
 	$('#discarded-cards').addClass('revers');
 
 }
@@ -43,18 +41,15 @@ function dealerCards(){
 	};
 
 
-
-
 function dealerCards1(){
-	var currentCardnumber = deck.length - 1;
-	var currentCard = deck[currentCardnumber];
-	//remove 1 card - pop out of deck, add to discarded array
+	var currentCard = deck.pop();
+	//remove 1 card - pop out of deck, add to dealer hand
 	var dealerHand = [];
 	dealerHand.push({
-			'suit': currentCard.suit,
-			'value': currentCard.value,
-			'reversed': true
-		});
+		'suit': currentCard.suit,
+		'value': currentCard.value,
+		'reversed': true
+	});
 	// Show on dealer's Hand
 	console.log(currentCard);
 	var dealerHand1Class = currentCard.suit + '-' + currentCard.value;
@@ -68,16 +63,10 @@ function dealerCards1(){
 
 
 function dealerCards2(){
-	var currentCardnumber = deck.length - 1;
-	var currentCard = deck[currentCardnumber];
-
-	//remove 1 card - pop out of deck, add to discarded array
+	var currentCard = deck.pop();
+	//remove 1 card - pop out of deck, add to dealer hand
 	var dealerHand = [];
-	dealerHand.push({
-			'suit': currentCard.suit,
-			'value': currentCard.value,
-			'reversed': false
-		});
+	dealerHand.push(currentCard);
 	// Show on dealer's Hand
 	console.log(currentCard);
 	var dealerHand2Class = currentCard.suit + '-' + currentCard.value;

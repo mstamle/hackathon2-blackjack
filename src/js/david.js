@@ -1,15 +1,9 @@
 
 function playerCards1(){
-	var currentCardnumber = deck.length - 1;
-	var currentCard = deck[currentCardnumber];
-	//remove 1 card - pop out of deck, add to discarded array
+	var currentCard = deck.pop();
+	//remove 1 card - pop out of deck, add to dealer hand
 	var playerHand = [];
-	playerHand.push({
-			'suit': currentCard.suit,
-			'value': currentCard.value,
-			'reversed': false
-        });
-
+	playerHand.push(currentCard);
 
 	// Show on player's Hand
 	console.log(currentCard);
@@ -20,16 +14,10 @@ function playerCards1(){
 };
 
 function playerCards2(){
-	var currentCardnumber = deck.length - 1;
-	var currentCard = deck[currentCardnumber];
-	//remove 1 card - pop out of deck, add to discarded array
+	var currentCard = deck.pop();
+	//remove 1 card - pop out of deck, add to dealer hand
 	var playerHand = [];
-	playerHand.push({
-			'suit': currentCard.suit,
-			'value': currentCard.value,
-			'reversed': false
-        });
-
+	playerHand.push(currentCard);
 
 	// Show on player's Hand
 	console.log(currentCard);
