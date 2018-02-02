@@ -14,7 +14,10 @@ $('#start-btn').on("click",startGame);
 
 function startGame(){
 	shuffleDeck(deck);
-	var currentCard = deck[0];
+	var i = deck.length - 1;
+	var currentCard = deck[i];
+	console.log(currentCard);
+
 	//remove 1 card - pop out of deck, add to discarded array
 	var discarded = [];
 	discarded.push({
