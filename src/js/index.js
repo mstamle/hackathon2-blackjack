@@ -154,25 +154,45 @@ function battle() {
 
 	// Compare the values' sum and announce
 	var resultField = $('#result');
-	if (pPoints == dPoints) {
-		if (pPoints > 21) {
-			resultField.text('Bust!!');
-		}
-		else if (pPoints < 21) {
-			resultField.text('Tie!');
-		} else {
-			resultField.text('You both win!');
-		}
 
-	} else if ((pPoints > 21) && (dPoints > 21)) {
-		resultField.text('Bust!!');
-	} else if ((pPoints < 21) && (dPoints < 21)) {
-		if (pPoints > dPoints) {
-			resultField.text('You win!');
-		} else {
-			resultField.text('You lose!');
+	if((pPoints > 21) && (dPoints > 21)){
+		resultField.text('Bust!! ' + 'Dealer has '
+		+ dPoints + ' points and you have '
+		+ pPoints + ' points.' );
+
+	} else{
+		if(pPoints == dPoints) {
+		resultField.text('Tie! ' + 'Dealer has '
+		+ dPoints + ' points and you have '
+		+ pPoints + ' points.');
+		} else if (pPoints > dPoints){
+		resultField.text('You win! ' + 'Dealer has '
+		+ dPoints + ' points and you have ' + pPoints + ' points.');
+		}else {
+		resultField.text('You lose! ' + 'Dealer has ' +
+		dPoints + ' points and you have ' + pPoints + ' points.');
 		}
-	}
+	};
+
+	// if (pPoints == dPoints) {
+	// 	if (pPoints > 21) {
+	// 		resultField.text('Bust!!');
+	// 	}
+	// 	else if (pPoints < 21) {
+	// 		resultField.text('Tie!');
+	// 	} else {
+	// 		resultField.text('You both win!');
+	// 	}
+
+	// } else if ((pPoints > 21) && (dPoints > 21)) {
+	// 	resultField.text('Bust!!');
+	// } else if ((pPoints < 21) && (dPoints < 21)) {
+	// 	if (pPoints > dPoints) {
+	// 		resultField.text('You win!');
+	// 	} else {
+	// 		resultField.text('You lose!');
+	// 	}
+	// }
 
 };
 
